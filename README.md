@@ -50,3 +50,26 @@ That's it! You have successfully extracted the ltoken and ltuid values from the 
 5. **Create the config file**: On GitHub, go to Settings > Security > Secrets and variables > Actions, then press "New repository secret", and save the base64 encoded config with the name `CHECKIN_CONFIG`.
 6. **Activate GitHub Actions on the repository**: Select the "Allow all actions and reusable workflows" option from the list.
 7. **Check if everything is okay**: Run the GitHub Actions workflow manually and check if it's successful. If it is successful, the script is set up to run every 6 hours. You can modify how often the script runs by editing the `.github/workflows/checkin.yaml` file. Use [crontab guru](https://crontab.guru) to create schedules.
+
+
+---
+
+## 🎥 Gource Visualization
+
+De ontwikkelhistorie van dit project in een film:
+
+<video src="https://raw.githubusercontent.com/itsdarklikehell/Daily-Hoyo-Checkin/master/gource.mp4" controls width="100%"></video>
+
+*De video wordt automatisch gegenereerd door de [Gource workflow](.github/workflows/gource.yml) bij elke push.*
+
+Lokale video genereren:
+```bash
+gource --max-files 1000 --key -800x600 \
+  --highlight-users --filename-time 3 --output-framerate 25 \
+  -s 0.6 --multi-sampling --auto-skip-seconds 0.1 \
+  --stop-at-end --hide mouse,progress -o gource.ppm
+
+ffmpeg -y -r 15 -f image2pipe -vcodec ppm -i gource.ppm \
+  -vcodec libx264 -preset medium -pix_fmt yuv420p \
+  -crf 1 -threads 0 -bf 0 gource.mp4
+```
