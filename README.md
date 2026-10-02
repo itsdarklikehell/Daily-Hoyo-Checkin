@@ -1,5 +1,11 @@
 # Daily Hoyo Checkin
 
+
+[![CI](https://github.com/itsdarklikehell/Daily-Hoyo-Checkin/actions/workflows/ci.yml/badge.svg)](https://github.com/itsdarklikehell/Daily-Hoyo-Checkin/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/itsdarklikehell/Daily-Hoyo-Checkin)](LICENSE)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
+
 Aka a bot that checks in daily on certain anime waifu/husbando collector websites: namely the _"Official Grasscutter"_, _"Ruby on Starry Rails"_, and _"Turbulent Area #0"_.
 
 # ltoken and ltuid Cookie Extraction Guide
